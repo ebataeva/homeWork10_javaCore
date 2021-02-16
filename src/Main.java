@@ -10,8 +10,13 @@ public class Main {
 
         System.out.printf(Arrays.toString(words)); //вывод массива изначального
         printArrayWithoutDuplicates(words);
-
         findDuplicatesOfArray(words);
+        PhoneBook book = new PhoneBook();
+        book.add("Вася", "8943583");
+        book.add("Вася", "8943583");
+        System.out.println(book);
+        book.get("Вася");
+        System.out.println(book.get("Вася"));
     }
 
     public static void printArrayWithoutDuplicates(String[] words) {
@@ -24,7 +29,7 @@ public class Main {
     }
 
     public static void findDuplicatesOfArray(String[] words) {
-        HashMap<String, String> mapWords = new HashMap<String, String>();
+        HashMap<String, String> mapWords = new HashMap<>();
         for (int i = 0; i < words.length; i++) {
             int n = 0;
             for (int j = 0; j < words.length; j++) {
