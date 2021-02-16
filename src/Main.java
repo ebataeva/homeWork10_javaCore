@@ -1,33 +1,39 @@
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 
 public class Main {
 
-static String[] WORDS =  {"привет", "кошка", "дом", "солнце", "пальто", "дверь", "дом", "привет", "заяц", "дом", "дом"};
 
     public static void main(String[] args) {
-        System.out.printf(Arrays.toString(WORDS)); //вывод массива изначального
+        String[] words = {"привет", "кошка", "дом", "солнце", "пальто", "дверь", "дом", "привет", "заяц", "дом", "дом"};
+
+        System.out.printf(Arrays.toString(words)); //вывод массива изначального
+        printArrayWithoutDuplicates(words);
+
+        findDuplicatesOfArray(words);
+    }
+
+    public static void printArrayWithoutDuplicates(String[] words) {
         HashSet<String> h = new HashSet<>();
-        for (String a : WORDS) {
+        for (String a : words) {
             h.add(a);
         }
         System.out.println(); //просто пустая строка, чтобы вывод был красивый
         System.out.println(h);//вывод массива без повторений;
+    }
 
+    public static void findDuplicatesOfArray(String[] words) {
         HashMap<String, String> mapWords = new HashMap<String, String>();
-        for (int i = 0; i < WORDS.length ; i++) {
+        for (int i = 0; i < words.length; i++) {
             int n = 0;
-            for (int j = 0; j < WORDS.length; j++) {
+            for (int j = 0; j < words.length; j++) {
 
-                if(WORDS[i] == WORDS[j]){
-n++;
+                if (words[i] == words[j]) {
+                    n++;
 
                 }
-                mapWords.put("\n"+WORDS[i],"встречается "+n);
+                mapWords.put("\n" + words[i], "встречается " + n);
 
             }
         }
