@@ -24,7 +24,7 @@ public class PhoneBook {
         }
     }
 
-    public List get(String lastName) {
+    public String get(String lastName) {
         List<String> foundEntries = new ArrayList<>();
         for (PhoneEntry a : phoneEntryList) {
             if (a.getLastName().equals(lastName)) {
@@ -32,7 +32,8 @@ public class PhoneBook {
             }
 
         }
-        return foundEntries;
+        if(foundEntries.size()==0)return "фамилия не найдена";
+        return foundEntries.toString();
     }
 
 
