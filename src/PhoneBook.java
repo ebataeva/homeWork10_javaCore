@@ -3,36 +3,37 @@ import java.util.List;
 
 
 public class PhoneBook {
- List<PhoneEntry> phoneEntryList = new ArrayList();
+   private List<PhoneEntry> phoneEntryList = new ArrayList();
 
 
- public List<PhoneEntry> getPhoneEntryList() {
-  return phoneEntryList;
- }
+    public List<PhoneEntry> getPhoneEntryList() {
+        return phoneEntryList;
+    }
 
- @Override
- public String toString() {
-  return "В телефонной книге " +
-          "имеется запись=" + phoneEntryList +
-          '}';
- }
+    @Override
+    public String toString() {
+        return "В телефонной книге " +
+                "имеется запись=" + phoneEntryList +
+                '}';
+    }
 
- public void add(String name, String phone) {
-  PhoneEntry entry = new PhoneEntry(name, phone);
-  if(!phoneEntryList.contains(entry)){
- phoneEntryList.add(entry);}
-}
+    public void add(String name, String phone) {
+        PhoneEntry entry = new PhoneEntry(name, phone);
+        if (!phoneEntryList.contains(entry)) {
+            phoneEntryList.add(entry);
+        }
+    }
 
-public List  get(String lastName){
-  List<String> foundEntries = new ArrayList<>();
-for(PhoneEntry a: phoneEntryList){
- if(a.lastName.equals(lastName)){
-  foundEntries.add(a.number);
- }
+    public List get(String lastName) {
+        List<String> foundEntries = new ArrayList<>();
+        for (PhoneEntry a : phoneEntryList) {
+            if (a.getLastName().equals(lastName)) {
+                foundEntries.add(a.getNumber());
+            }
 
-}
-return foundEntries;
-}
+        }
+        return foundEntries;
+    }
 
 
 }

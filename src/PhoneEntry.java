@@ -2,8 +2,8 @@ import java.util.HashMap;
 import java.util.Objects;
 
 public class PhoneEntry {
-    String lastName;
-    String number;
+ private    String lastName;
+ private    String number;
 
     public String getLastName() {
         return lastName;

@@ -13,7 +13,7 @@ public class Main {
         findDuplicatesOfArray(words);
         PhoneBook book = new PhoneBook();
         book.add("Вася", "8943583");
-        book.add("Вася", "8943583");
+        book.add("Вася", "89437583");
         System.out.println(book);
         book.get("Вася");
         System.out.println(book.get("Вася"));
