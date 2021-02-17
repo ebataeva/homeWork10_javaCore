@@ -33,7 +33,7 @@ public class PhoneBook {
 
         }
         if(foundEntries.size()==0)return "фамилия не найдена";
-        return foundEntries.toString();
+        return "для фамилии "+ lastName+" найдены номера "+foundEntries.toString();
     }
 
 

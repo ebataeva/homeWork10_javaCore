@@ -7,16 +7,20 @@ public class Main {
 
     public static void main(String[] args) {
         String[] words = {"привет", "кошка", "дом", "солнце", "пальто", "дверь", "дом", "привет", "заяц", "дом", "дом"};
-
+        TestData data = new TestData();
         System.out.printf(Arrays.toString(words)); //вывод массива изначального
         printArrayWithoutDuplicates(words);
         findDuplicatesOfArray(words);
         PhoneBook book = new PhoneBook();
-        book.add("Вася", "8943583");
-        book.add("Вася", "89437583");
+        for (int i = 0; i < 30; i++) {
+            book.add(data.generateLastName(), data.generatePhone());
+        }
+
         System.out.println(book);
-        book.get("Вася");
-        System.out.println(book.get("Вася"));
+
+        System.out.println(book.get("Stepanov"));
+        System.out.println(book.get("Petrov"));
+
     }
 
     public static void printArrayWithoutDuplicates(String[] words) {
